@@ -1,11 +1,12 @@
 package com.example.mdi2_107_todoapp
 
+import androidx.compose.runtime.mutableStateListOf
 import androidx.lifecycle.ViewModel
 
 class TodoViewModel: ViewModel() {
     // _tasks is private only this class can modify it
     // This is a Mutable list that holds all current task
-    private val _tasks = mutableListOf<Task>()
+    private val _tasks = mutableStateListOf<Task>()
 
     // tasks is public, the UI reads from the list but cannot modify it directly
     val tasks: List<Task> get() = _tasks
