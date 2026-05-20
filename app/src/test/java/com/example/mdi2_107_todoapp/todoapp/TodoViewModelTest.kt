@@ -72,4 +72,12 @@ class TodoViewModelTest {
         assertEquals(1, viewModel.getTaskCount())
         assert(viewModel.containsTask("Do exercise"))
     }
+
+    // Assignment 1
+    @Test
+    fun addTask_BuyGroceries_appearsInList() {
+        viewModel.addTask("Buy groceries")
+        assertEquals(1, viewModel.getTaskCount())
+        assert(viewModel.containsTask("Buy groceries"))
+    }
 }
