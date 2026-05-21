@@ -8,6 +8,12 @@
       <SelectionState runConfigName="TodoScreenTest">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
+      <SelectionState runConfigName="taskCounter_updatesAfterAddingTask()">
+        <option name="selectionMode" value="DROPDOWN" />
+      </SelectionState>
+      <SelectionState runConfigName="addTask_userTypesAndClicksAdd_taskAppearsInList()">
+        <option name="selectionMode" value="DROPDOWN" />
+      </SelectionState>
     </selectionStates>
   </component>
 </project>
