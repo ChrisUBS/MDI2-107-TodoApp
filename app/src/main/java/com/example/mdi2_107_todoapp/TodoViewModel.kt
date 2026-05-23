@@ -1,5 +1,6 @@
 package com.example.mdi2_107_todoapp
 
+import android.util.Log
 import androidx.compose.runtime.mutableStateListOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -31,8 +32,21 @@ class TodoViewModel: ViewModel() {
 //                }
 //            }
             _tasks.add(Task(nextId++, title.trim()))
+            // wrongGetTaskCount()
         }
     }
+
+//    companion object {private const val TAG = "TodoViewModel"}
+//    // Buggy version — task is added but with wrong title
+//    fun addTask(title: String) {
+//        if (title.isNotBlank()) {
+//            // BUG: the id and title parameters are swapped
+//            // id receives the title, title receives the id converted to String
+//            _tasks.add(Task(id = nextId, title = nextId.toString()))
+//            nextId++
+//            Log.d(TAG, "Task added — but with wrong title!")
+//        }
+//    }
 
     // Removes a task from the list by its ID
     fun removeTask(taskId: Int) {
@@ -42,6 +56,11 @@ class TodoViewModel: ViewModel() {
     // Returns the number of tasks currently in the list
     // Used in Unit test to verify task were added correctly
     fun getTaskCount(): Int = _tasks.size
+
+    fun wrongGetTaskCount(): Int {
+        val taskList: List<Task>? = null
+        return taskList!!.size // !! forces a crash -- trows NullPointerException
+    }
 
     // Returns true if a task with the given ID exists in the list
     // Used in Unit test to verify the correct task was added
